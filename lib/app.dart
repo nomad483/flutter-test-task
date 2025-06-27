@@ -12,14 +12,12 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => HomeViewModel())
-        ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Random Colors',
-          home: HomeView(),
-        )
+      providers: [ChangeNotifierProvider(create: (_) => HomeViewModel())],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Random Colors',
+        home: HomeView(),
+      ),
     );
   }
 }

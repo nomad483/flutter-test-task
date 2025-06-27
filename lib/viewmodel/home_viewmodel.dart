@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_task/core/utils/color_generator.dart';
 import 'package:flutter_test_task/model/color_model.dart';
 
-
 /// State management
 class HomeViewModel extends ChangeNotifier {
   static const _maxHistoryCount = 3;

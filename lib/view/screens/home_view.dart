@@ -52,22 +52,20 @@ class HomeView extends StatelessWidget {
                           'Tap: ${homeViewModel.tapCount}',
                           style: TextStyle(fontSize: 18, color: textColor),
                         ),
-                        const SizedBox(width: 12,),
+                        const SizedBox(width: 12),
                         Text(
-                          'Color: ${ColorModel(homeViewModel.currentColor)
-                              .hexCode}',
+                          'Color: ${ColorModel(homeViewModel.currentColor).hexCode}',
                           style: TextStyle(fontSize: 18, color: textColor),
                         ),
                       ],
                     ),
                     const SizedBox(height: 12),
                     Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children:
-                        homeViewModel.history.map((item) =>
-                            ColorHistoryItem(colorModel: item)).toList(),
-
-                    )
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: homeViewModel.history
+                          .map((item) => ColorHistoryItem(colorModel: item))
+                          .toList(),
+                    ),
                   ],
                 ),
               ),
