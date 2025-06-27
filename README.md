@@ -1,14 +1,29 @@
-# flutter_project_template
-[![flutter_project_template](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_badge?projectId=149)](https://nokycucwgzweensacwfy.supabase.co/functions/v1/get_project_url?projectId=149)
+## Random Colors App
+*Application developed with using MVVM Architecture*
 
-📖 Template for flutter projects using solid_lints, CI for tests and analysis.
+### Main features
+* Random colors with 16777216 variants without external colors generation libraries
+* Change color after tap on the screen
+* Text on middle of the screen
 
-- Uses latest stable flutter
-- Repo name as your project name
-- Organization from your profile email address or default
+### Additional features
+* History of a three last colors
+* Count tapping of the screen
+* Reset state to default
 
-# Usage
-1. Press "Use this template" on the menu.
-2. Fill Github form with your new repo name and press "Create repository from template"
-3. Wait for it to be created and set up action is complete. In a couple of minutes, you'll see the flutter project created in your repo once Github Actions are complete.
-4. Clone and code.
+## Demo
+
+<p align="center">
+    <img src="assets/images/ios.gif" alt="Demo iOS" width="45%" style="border-radius: 16px; margin-right: 10px;" />
+    <img src="assets/images/android.gif" alt="Demo Android" width="45%" style="border-radius: 16px;" />
+</p>
+
+### Color Generation Choice
+While implementing random color generation, I considered two approaches:
+
+* Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0)
+– A commonly used solution found on StackOverflow.
+* Color.fromRGBO(random.nextInt(256), random.nextInt(256), random.nextInt(256), 1)
+– A more explicit method I’ve used before when working with similar logic in SwiftUI.
+
+I chose the second option because it's more readable and doesn’t require dealing with bitwise operations.
