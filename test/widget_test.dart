@@ -8,22 +8,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_test_task/app.dart';
+import 'package:flutter_test_task/viewmodel/home_viewmodel.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
     await tester.pumpWidget(const App());
+    final homeViewModel = HomeViewModel();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    final initialColor = homeViewModel.currentColor;
+    expect(initialColor, equals(Colors.white));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    homeViewModel.generateColor();
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    final updatedColor = homeViewModel.currentColor;
+    expect(updatedColor, isNot(equals(initialColor)));
   });
 }
